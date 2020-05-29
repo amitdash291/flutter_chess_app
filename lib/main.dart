@@ -1,8 +1,9 @@
 import 'dart:math';
 
-import 'package:chess_app/views/chessBoardView.dart';
+import 'package:chess_app/views/chess_board_view.dart';
 import 'package:chess_vectors_flutter/chess_vectors_flutter.dart';
 import 'package:flutter/material.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.brown,
       ),
       home: MyHomePage(title: 'Chess App'),
     );
@@ -84,30 +85,32 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             MaterialButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ChessBoardView()),
-                  );
-                },
-                color: Colors.blue[200],
-                splashColor: Colors.blue[800],
-                shape: const StadiumBorder(),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                      vertical: 8.0, horizontal: 12.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Transform(
-                          alignment: Alignment.center,
-                          transform: Matrix4.rotationY(pi),
-                          child: WhiteKnight(size: 40.0)),
-                      const SizedBox(width: 8.0),
-                      BlackKnight(size: 40.0)
-                    ],
-                  ),
-                ))
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ChessBoardView()),
+                );
+              },
+              textColor: Colors.black,
+              color: Colors.brown[300],
+              splashColor: Colors.brown[800],
+              shape: const StadiumBorder(),
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Transform(
+                        alignment: Alignment.center,
+                        transform: Matrix4.rotationY(pi),
+                        child: WhiteKnight(size: 40.0)),
+                    const SizedBox(width: 8.0),
+                    BlackKnight(size: 40.0)
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),

@@ -6,7 +6,7 @@ class ChessBoardView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-//        backgroundColor: Colors.yellow[100],
+        backgroundColor: Colors.brown[300],
         body: Center(
       child: Padding(
         padding: const EdgeInsets.all(10.0),
